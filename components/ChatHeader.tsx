@@ -27,12 +27,10 @@ export default function ChatHeader() {
         for (const id in channel.presenceState()) {
           //@ts-expect-error description of error
           userIDs.push(channel.presenceState()[id][0].user_id);
-          console.log(userIDs);
         }
         setOnlineUsers([...new Set(userIDs)].length);
       })
       .subscribe(async (status) => {
-        console.log(status);
         if (status === "SUBSCRIBED") {
           await channel.track({
             online_at: new Date().toISOString(),
