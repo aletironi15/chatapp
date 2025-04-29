@@ -11,6 +11,7 @@ export default function ChatHeader() {
 
   const supabase = createClient();
 
+  console.log("ciao");
   const fetchOnlineUsers = async () => {
     const res = await isUserOnline();
     if (res.status !== "success") {
