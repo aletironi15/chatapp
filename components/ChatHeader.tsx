@@ -9,6 +9,8 @@ export default function ChatHeader() {
   const [loading, setLoading] = useState<boolean>(false);
   const [onlineUsers, setOnlineUsers] = useState<number>(0);
 
+  console.log("cciao");
+
   const supabase = createClient();
   const fetchOnlineUsers = async () => {
     const res = await isUserOnline();
